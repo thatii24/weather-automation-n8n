@@ -1,0 +1,14 @@
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n-weather
+    restart: unless-stopped
+
+    ports:
+      - "5678:5678"
+
+    environment:
+      - TZ=Asia/Colombo
+
+    volumes:
+      - ./n8n_data:/home/node/.n8n
